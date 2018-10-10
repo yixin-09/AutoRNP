@@ -73,8 +73,7 @@ def derivingApproximation(th,bound_l,rf,name,filename,inp):
 
 
 def main(rf,pf,level, rd_seed, mean_error, inpdm, fnm, limit_time, limit_n, num, password):
-    print "Begin repair the function"+fnm
-
+    print "Begin repair the function "+fnm
     # generate file to store patch files
     filename = "../experiments/experiment_results/repair_results" + str(num) + "/test" + repr(int(level * 10))
     if not os.path.exists(filename):
