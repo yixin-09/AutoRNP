@@ -1,5 +1,5 @@
 #include "patch_of_gsl_sf_zeta.c"
-if((s<=-3.999761118487321)&&(s>=-3.9999999999999996)){
+if((s<=-25.999977551281127)&&(s>=-26.000022447268332)){
  result->val = accuracy_improve_patch_of_gsl_sf_zeta(s);
  result->err = GSL_DBL_EPSILON * fabs(result->val);
  return GSL_SUCCESS;

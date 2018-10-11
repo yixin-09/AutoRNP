@@ -15,8 +15,7 @@ mean_error_l = [2025112.1182000001, 234074.52411000003, 58280.480090000005, 1350
                 1.5652800000000002, 1.83165, 10664.568519999999, 2.2533299999999996, 1.0, \
                 2.02422, 1.0, 11.60261, 37.64867999999999]
 
-def refresh(password):
-    sudoPassword = password
+def refresh():
     command = "rm -rf ../benchmarks/GSL_function/specfunc4patch/"
     command2 = "cp -R ../benchmarks/GSL_function/specfunc/. ../benchmarks/GSL_function/specfunc4patch/"
     os.system(command)
@@ -47,11 +46,11 @@ def testBasedThreshold(num,fun_id,repair_enable):
     if not os.path.exists(filename):
         os.makedirs(filename)
     print rd_seed
-    i = fun_id
+    i = fun_id*3
     level = 0.3
     #change it to youself password
     password = "hello"
-    refresh(password)
+    refresh()
     rf = rfl[fun_id]
     pf = gfl[fun_id]
     mean_error = mean_error_l[fun_id]
@@ -95,7 +94,7 @@ def testBasedThreshold(num,fun_id,repair_enable):
         print "Patch is generated"
 
 
-testBasedThreshold(1,0,1)
+testBasedThreshold(1,18,1)
 
 
 

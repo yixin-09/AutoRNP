@@ -81,7 +81,7 @@ def DEMC(rf,pf,inpdm,fnm,limit_n,limit_time):
                 # glob_fitness_real_temp = lambda x: bf.fitness_fun(rf, pf, x)
                 x = math.asin((2*j[1]-gen_l[0]-gen_l[1])/(gen_l[1]-gen_l[0]))
                 # x = j[1]
-                res = basinhopping(glob_fitness_real_temp,x,stepsize=bf.getulp(x)*1e2,minimizer_kwargs=minimizer_kwargs,niter_success=10,niter=200)
+                res = basinhopping(glob_fitness_real_temp,x,stepsize=bf.getulp(x)*1e10,minimizer_kwargs=minimizer_kwargs,niter_success=10,niter=200)
                 count1 = count1 + res.nfev
                 # x = res.x[0]
                 x = reduce_x(gen_l[0],gen_l[1],res.x[0])
