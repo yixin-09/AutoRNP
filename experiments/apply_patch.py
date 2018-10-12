@@ -3,6 +3,7 @@ import time
 import sys,getopt
 import xlrd
 import ast
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import AutoRNP.basic_function as bf
 from Onevbench import *
 
@@ -17,9 +18,9 @@ def read_bound_randomSeed(exname,filename,k,fun_id):
     id_k = k
     ret_l = []
     for i in [fun_id]:
-        bound = ast.literal_eval(table.row_values(i+k)[2])
-        rd_seed = int(table.row_values(i+k)[4])
-        th = float(table.row_values(i+k)[1])
+        bound = ast.literal_eval(table.row_values(i*3+k)[2])
+        rd_seed = int(table.row_values(i*3+k)[4])
+        th = float(table.row_values(i*3+k)[1])
         pf = gfl[fun_id]
         rf = rfl[fun_id]
         ipdm = input_domain[fun_id][0]
@@ -28,7 +29,6 @@ def read_bound_randomSeed(exname,filename,k,fun_id):
         k = k+2
     bf.testResultsToTable(exname,ret_l,id_k,0,fun_id)
     cwd = os.getcwd()
-    # sudo_cmd("./unpatch_cmd.sh > tmp_log")
     os.chdir(filename+"patch")
     os.system("./patch_cmd.sh > tmp_log")
     os.chdir(filename)

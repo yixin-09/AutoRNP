@@ -23,7 +23,6 @@
 #include <gsl/gsl_math.h>
 #include <gsl/gsl_errno.h>
 #include <gsl/gsl_sf_elementary.h>
-#include "patch_of_gsl_sf_zeta.c"
 #include <gsl/gsl_sf_exp.h>
 #include <gsl/gsl_sf_gamma.h>
 #include <gsl/gsl_sf_pow_int.h>
@@ -776,11 +775,6 @@ int gsl_sf_hzeta_e(const double s, const double q, gsl_sf_result * result)
 
 int gsl_sf_zeta_e(const double s, gsl_sf_result * result)
 {
- if((s<=-25.999977551281127)&&(s>=-26.000022447268332)){
-  result->val = accuracy_improve_patch_of_gsl_sf_zeta(s);
-  result->err = GSL_DBL_EPSILON * fabs(result->val);
-  return GSL_SUCCESS;
- }
   /* CHECK_POINTER(result) */
 
   if(s == 1.0) {

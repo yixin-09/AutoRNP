@@ -1,6 +1,0 @@
-#include "patch_of_gsl_sf_airy_Bi_deriv.c"
-if((x<=-405.6501112127283)&&(x>=-405.6503296191551)){
- result->val = accuracy_improve_patch_of_gsl_sf_airy_Bi_deriv(x);
- result->err = GSL_DBL_EPSILON * fabs(result->val);
- return GSL_SUCCESS;
-}

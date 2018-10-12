@@ -26,12 +26,13 @@ def step_back(th,temp_b1,step,rf,pf,sign,ulp_p):
 def pointToBound(th,rf,pf,point):
     print "Begin Find the bound around the inputs and under the threshold"
     # right ward iteration
-    step = 400
+    step = 4e2
     print "Right forward to find the up bound"
     print th
     ulp_p = bf.getulp(point)
+    p0_err = bf.getUlpError(rf(point), pf(point))
     temp_b1 = point
-    for i in range(0,400):
+    for i in range(0,int(4e2)):
         temp_b1 = temp_b1 + ulp_p*step
         max_err_mid, temp_b1 = bf.max_errorOnPoint(rf, pf, temp_b1, step)
         try:
@@ -46,7 +47,7 @@ def pointToBound(th,rf,pf,point):
     print "Left forward to find the down bound"
     step = 4e2
     temp_b1 = point
-    for i in range(0, 400):
+    for i in range(0, int(4e2)):
         temp_b1 = temp_b1 - ulp_p * step
         max_err_mid, temp_b1 = bf.max_errorOnPoint(rf, pf, temp_b1, step)
         try:

@@ -1,11 +1,13 @@
 import os
 import xlwt
 import numpy as np
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from AutoRNP.main import main
-import AutoRNP.basic_function as bf
 from Onevbench import *
 from xlutils.copy import copy
 import xlrd
+import time
 
 
 
@@ -39,15 +41,12 @@ def create_excel(table_name):
     book.save(table_name)
 
 
-def testBasedThreshold(num,fun_id,repair_enable):
-    rd_seed = np.random.randint(0, 1e8, 1)[0]
-    np.random.seed(rd_seed)
+def testBasedThreshold(num,fun_id,repair_enable,level,limit_time,rd_seed):
     filename = "experiment_results/table_results/"
     if not os.path.exists(filename):
         os.makedirs(filename)
     print rd_seed
     i = fun_id*3
-    level = 0.3
     #change it to youself password
     password = "hello"
     refresh()
@@ -56,45 +55,51 @@ def testBasedThreshold(num,fun_id,repair_enable):
     mean_error = mean_error_l[fun_id]
     inpdm = input_domain[fun_id][0]
     fnm = ngfl_fname[fun_id]
-    limit_time = 3600*3
     limit_n = 1
-    ret = []
     res = main(rf, pf, level, rd_seed, mean_error, inpdm, fnm, limit_time, limit_n, num, password)
-    ret.append(res)
-    k = 1
+    ln = [0, 3, 2, 1]
+    k = ln[int(level*10)]
     table_name = "experiment_results/table_results/experiment_results_total" + str(num) + ".xls"
     if not os.path.exists(table_name):
         create_excel(table_name)
     old_excel = xlrd.open_workbook(table_name, formatting_info=True)
     new_excel = copy(old_excel)
     sheet = new_excel.get_sheet(0)
-    for j in range(0, len(ret)):
-        try:
-            sheet.write(i + j + k, 0, ret[j][0])
-            sheet.write(i + j + k, 1, ret[j][1])
-            sheet.write(i + j + k, 2, str(ret[j][3]))
-            sheet.write(i + j + k, 3, ret[j][4])
-            sheet.write(i + j + k, 4, rd_seed)
-            sheet.write(i + j + k, 5, "After")
-            sheet.write(i + j + k, 6, ret[j][2])
-            sheet.write(i + j + k, 7, ret[j][5])
-            sheet.write(i + j + k, 8, ret[j][6])
-            sheet.write(i + j + k, 9, ret[j][8])
-            sheet.write(i + j + k, 10, ret[j][9])
-        except IndexError:
-            k = k + 2
-            continue
-        k = k + 2
+    sheet.write(i + k, 0, res[0])
+    sheet.write(i + k, 1, res[1])
+    sheet.write(i + k, 2, str(res[3]))
+    sheet.write(i + k, 3, res[4])
+    sheet.write(i + k, 4, rd_seed)
+    sheet.write(i + k, 5, "After")
+    sheet.write(i + k, 6, res[2])
+    sheet.write(i + k, 7, res[5])
+    sheet.write(i + k, 8, res[6])
+    sheet.write(i + k, 9, res[8])
+    sheet.write(i + k, 10, res[9])
     new_excel.save(table_name)
     if repair_enable==1:
         print "begin repair original program and testing"
+        test_time = time.time()
         cmd = "./run_experiment.sh " + str(num) + " " + str(int(level*10)) + " " + str(fun_id)
+        test_time2 = time.time()-test_time
+        print "The testing time is : " + repr(test_time2)
         os.system(cmd)
     else:
         print "Patch is generated"
 
 
-testBasedThreshold(1,18,1)
+rd_seed = np.random.randint(0, 1e8, 1)[0]
+np.random.seed(rd_seed)
+repair_enable = 1
+num = 1
+for i in range(11,12):
+    limit_time = 3600 * 3
+    if i == 14 :
+        # if you want to repair the gsl_sf_psi_1 function, change the time to more than 8 hours
+        limit_time = 30
+    testBasedThreshold(num,i,repair_enable,0.1,limit_time,rd_seed)
+    testBasedThreshold(num,i,repair_enable,0.2,limit_time,rd_seed)
+    testBasedThreshold(num,i,repair_enable,0.3,limit_time,rd_seed)
 
 
 

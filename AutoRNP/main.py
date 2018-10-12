@@ -96,16 +96,14 @@ def main(rf,pf,level, rd_seed, mean_error, inpdm, fnm, limit_time, limit_n, num,
     # make sure remove the old patch
     if os.path.exists(filename + '/patch_of_' + fnm + ".c"):
         os.remove(filename + '/patch_of_' + fnm + ".c")
-
     # A list to store the results we want to save, e.g. the repair time, the size of bound
     res = []
     res.append(fnm)
     print limit_time
     max_ret = searchMaxErr(rf,pf,inpdm,fnm,limit_time,limit_n)
-
+    num_line = 0
     staTime = time.time()
     try:
-
         signal.alarm(limit_time)
         # call the detector to find I_err
         max_x, bound, bound_l, th = detectHighErrs(max_ret, level, mean_error, rf, pf)
@@ -120,7 +118,6 @@ def main(rf,pf,level, rd_seed, mean_error, inpdm, fnm, limit_time, limit_n, num,
         ori_bound = bound
         print bound
         print "The size of bound is: %.8e" % bound_distance
-
         # call the derivingApproximation to produce approximation and produce patch
         save_lines, num_line = derivingApproximation(th, bound_l, rf, fnm, filename, max_x)
         bf.save_line_list(line_filename + '/' + fnm + '.txt', save_lines)

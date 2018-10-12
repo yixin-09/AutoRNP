@@ -126,6 +126,10 @@ def covertToC(glob_l,n,name,idx,filename,bound,temp_ploy_fit):
     for i in glob_l:
         print "%.18e," % i[0][1]
     print '};'
+    print 'static double array_e_y_' + name + '_' + str(idx) + '[' + str(len_glob) + '] = {'
+    for i in glob_l:
+        print "%.18e," % i[7][1]
+    print '};'
     print 'static double array_detla_'+name+'_'+str(idx)+'[' + str(len_glob) + '] = {'
     for i in glob_l:
         print "%.18e," % i[1]
@@ -143,7 +147,7 @@ def covertToC(glob_l,n,name,idx,filename,bound,temp_ploy_fit):
     # print '};'
     print 'static double array_maxE_' +name+'_'+ str(idx) + '[' + str(len_glob) + '] = {'
     for i in glob_l:
-        print "%.15e," % i[4]
+        print "%.18e," % i[4]
     print '};'
     print "double accuracy_improve_patch_of_gsl_"+name+'_'+str(idx)+"(double x)"
     print "{"
@@ -154,15 +158,16 @@ def covertToC(glob_l,n,name,idx,filename,bound,temp_ploy_fit):
     print " double compen = 0.0;"
     print " double n_x = ((x-x_0)/ulp_x);"
     if temp_ploy_fit == '':
-        print " int idx = floor(n_x*len_glob/n);"
+        # print " int idx = floor(n_x*len_glob/n);"
+        print " int idx = floor(len_glob/2);"
     else:
         print temp_ploy_fit
         print " if(idx>=len_glob){"
         print "         idx = len_glob-1;"
         print " }"
     print " while((idx>=0)&&(idx<len_glob)){"
-    print "     if((n_x>=array_idx_"+name+'_'+str(idx)+"[idx])&&(n_x<=array_idx_"+name+'_'+str(idx)+"[idx+1])){"
-    print "         compen = -ulp_x*ulp_x * (n_x-array_idx_"+name+'_'+str(idx)+"[idx+1])*(n_x-array_idx_"+name+'_'+str(idx)+"[idx])*array_maxE_"+name+'_'+str(idx)+"[idx];"
+    print "     if((n_x>array_idx_"+name+'_'+str(idx)+"[idx])&&(n_x<array_idx_"+name+'_'+str(idx)+"[idx+1])){"
+    print "         compen = ulp_x*ulp_x * (n_x-array_idx_"+name+'_'+str(idx)+"[idx+1])*(n_x-array_idx_"+name+'_'+str(idx)+"[idx])*array_maxE_"+name+'_'+str(idx)+"[idx];"
     print "         return (x-array_x_"+name+'_'+str(idx)+"[idx])/ulp_x*array_detla_"+name+'_'+str(idx)+"[idx]+array_y_"+name+'_'+str(idx)+"[idx]+compen;"
     print "     }"
     print "     else if(n_x<array_idx_"+name+'_'+str(idx)+"[idx]){"
@@ -170,6 +175,12 @@ def covertToC(glob_l,n,name,idx,filename,bound,temp_ploy_fit):
     print "     }"
     print "     else if(n_x>array_idx_"+name+'_'+str(idx)+"[idx+1]){"
     print "         idx = idx + 1;"
+    print "     }"
+    print "     else if(x==array_x_"+name+'_'+str(idx)+"[idx]){"
+    print "         return array_y_"+name+'_'+str(idx)+"[idx];"
+    print "     }"
+    print "     else{"
+    print "         return array_e_y_"+name+'_'+str(idx)+"[idx];"
     print "     }"
     print " }"
     print "}"

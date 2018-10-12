@@ -1,8 +1,5 @@
 from pygsl.testing import sf
 from mpmath import *
-import numpy as np
-import warnings
-from scipy import special
 
 #This file stores all functions (20) that need to be repaired
 

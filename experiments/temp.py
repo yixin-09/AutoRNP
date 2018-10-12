@@ -1,4 +1,5 @@
+import sys
 import os
-
-cmd = "./run_experiment.sh 1 3 0"
-os.system(cmd)
+pwd = os
+print('Python %s on %s' % (sys.version, sys.platform))
+sys.path.extend(['/home/yixin/experiment/AutoRNP', '/home/yixin/experiment/AutoRNP/experiments'])

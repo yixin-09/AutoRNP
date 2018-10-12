@@ -1,6 +1,0 @@
-#include "patch_of_gsl_sf_Ci.c"
-if((x<=3.384606040522459)&&(x>=3.3837549029136156)){
- result->val = accuracy_improve_patch_of_gsl_sf_Ci(x);
- result->err = GSL_DBL_EPSILON * fabs(result->val);
- return GSL_SUCCESS;
-}

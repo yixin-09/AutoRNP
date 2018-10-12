@@ -65,14 +65,14 @@ def DEMC(rf,pf,inpdm,fnm,limit_n,limit_time):
                 temp = [temp_max, temp_x, k]
                 res_l.append(temp)
             t1 = time.time() - temp_st
-            print t1
+            # print t1
             res_l = sorted(res_l, reverse=True)
             temp_max = res_l[0][0]
             temp_x = res_l[0][1]
             bound = res_l[0][2]
             res_lr = []
             s_len = np.min([len(res_l), 10])
-            print res_l[0:s_len]
+            # print res_l[0:s_len]
             # glob_fitness_real_temp = lambda x: x*x
             minimizer_kwargs = {"method":"Nelder-Mead"}
             for j in res_l[0:s_len]:
@@ -105,6 +105,10 @@ def DEMC(rf,pf,inpdm,fnm,limit_n,limit_time):
                 final_bound = bound
         final_time = time.time()-st
         bf.output_err(record_res_l, file_name, fnm)
+        print "The detected max error and input are"
+        print "max_err:"+repr(final_max)
+        print "input:"+repr(final_x)
+        print "The time is "+repr(final_time)
         return [final_max, final_x, final_bound, final_time,count,final_count1,final_count2]
     except TimeoutError:
         final_time = time.time() - st

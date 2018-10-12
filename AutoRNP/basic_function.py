@@ -163,22 +163,19 @@ def getFPNum(a,b):
     return int(res+1)
 
 # return the 1.0/FPNum
-def fitness_fun(rf,pf,inp):
+def fitness_fun(rf, pf, inp):
     try:
         inp = float(inp)
         r_val = float(rf(inp))
         p_val = float(pf(inp))
         if math.fabs(p_val) > np.finfo(np.double).max:
             return 1.0
-        # if math.fabs(p_val) < np.finfo(np.double)._str_tiny:
-        #     if math.fabs(p_val) != 0:
-        #         return 1.0
         if math.fabs(r_val) > np.finfo(np.double).max:
             return 1.0
-    except (ValueError,ZeroDivisionError,OverflowError,Warning,TypeError), e:
+    except (ValueError, ZeroDivisionError, OverflowError, Warning, TypeError):
         return 1.0
-    res = float(getFPNum(r_val, p_val))
-    if (res == 0.0)|(np.isnan(res)):
+    res = float(getUlpError(r_val, p_val))
+    if (res == 0.0) | (np.isnan(res)):
         res = 1.0
     else:
         res = 1.0 / res
@@ -251,20 +248,20 @@ def bound_partition(bound):
     ub = bound[1]
     bound_l = []
     tmp_b = bound[0]
-    if getulp(db)!= getulp(ub):
+    if getulp(db) != getulp(ub):
         sdb = np.sign(np.frexp(db)[0])
         edb = np.frexp(db)[1]
         sedb = np.sign(bound[0])
         print edb
         print sedb
-        while(1):
-            tmp_0 = 0.5*sdb
+        while (1):
+            tmp_0 = 0.5 * sdb
             # print
             # print tmp_0
             # print edb
             if sedb > 0:
                 edb = int(edb + sedb)
-            up_b = np.ldexp(tmp_0,edb)
+            up_b = np.ldexp(tmp_0, edb)
             if sedb < 0:
                 edb = int(edb + sedb)
             print up_b
@@ -272,17 +269,21 @@ def bound_partition(bound):
                 print up_b
                 edb = int(edb - sedb)
                 print edb
-                bound_l.append([tmp_b,0])
-                sdb = -1*sdb
-                sedb = -1*sedb
+                bound_l.append([tmp_b, 0])
+                sdb = -1 * sdb
+                sedb = -1 * sedb
             if up_b > bound[1]:
                 if tmp_b != bound[1]:
-                    bound_l.append([tmp_b,bound[1]])
+                    bound_l.append([tmp_b, bound[1]])
                 break
             if tmp_b != up_b:
-                bound_l.append([tmp_b,up_b])
-            ulp_b = getulp(up_b+getulp(up_b))
-            tmp_b = up_b+ulp_b
+                if getulp(tmp_b)==getulp(up_b):
+                    bound_l.append([tmp_b, up_b])
+                    ulp_b = getulp(up_b + getulp(up_b))
+                    tmp_b = up_b + ulp_b
+                else:
+                    bound_l.append([tmp_b, up_b-getulp(tmp_b)])
+                    tmp_b = up_b
     else:
         bound_l.append(bound)
     return bound_l
@@ -314,23 +315,25 @@ def random_test(pf,rf,bound,rd_seed,th):
         num = dis_num
     else:
         num = 100000
-    num = 100
+    num = 1000
     X = np.random.uniform(bound[0], bound[1], num)
     err_l = []
     X_good = []
     X_bad = []
     start_time = time.time()
-    for i in X:
-        dis_err = getUlpError(rf(i), pf(i))
+    errfun = np.frompyfunc(lambda x: getUlpError(rf(x), pf(x)), 1, 1)
+    res_l = errfun(X)
+    for i in res_l:
+        dis_err = i
         err_l.append(dis_err)
-        if dis_err <= th:
+        if dis_err - th <= 1.0:
             X_good.append((i, dis_err))
         else:
             X_bad.append((i, dis_err))
     test_time = time.time() - start_time
     g_num = len(X_good)
     success_rate = float(g_num) / float(num)
-    mean_err = np.mean(err_l)
+    mean_err = np.float_power(2, np.mean(np.log2(err_l)))
     max_err = np.max(err_l)
     return success_rate, mean_err, max_err, test_time
 
@@ -342,7 +345,7 @@ def test_pf(pf,inp):
 
 def just_run_pf(pf,bound,rd_seed):
     np.random.seed(rd_seed)
-    limit_n = 100
+    limit_n = 1000
     pf_array = np.frompyfunc(lambda x: test_pf(pf,x), 1, 1)
     dis_num = getFPNum(bound[0],bound[1])
     if dis_num<limit_n:
@@ -403,14 +406,14 @@ def testResultsToTable(exname,ret_l,k,id,fun_id):
         name7 = "random_test_time_whole"
         name8 = "random_max_error"
     temp_id = id*10+31
-    ws.write(0,temp_id,name1)
-    ws.write(0,temp_id+1,name2)
-    ws.write(0, temp_id+2, name3)
-    ws.write(0, temp_id +3, name4)
-    ws.write(0, temp_id +4, name5)
-    ws.write(0, temp_id +5, name6)
-    ws.write(0, temp_id +6, name7)
-    ws.write(0, temp_id +7, name8)
+    ws.write(0, temp_id,name1)
+    ws.write(0, temp_id + 1,name2)
+    ws.write(0, temp_id + 2, name3)
+    ws.write(0, temp_id + 3, name4)
+    ws.write(0, temp_id + 4, name5)
+    ws.write(0, temp_id + 5, name6)
+    ws.write(0, temp_id + 6, name7)
+    ws.write(0, temp_id + 7, name8)
     for i in [fun_id]:
         ws.write(i*3+k,temp_id,str(ret_l[0][0][0]))
         ws.write(i*3+k,temp_id+1,ret_l[0][1][3])
