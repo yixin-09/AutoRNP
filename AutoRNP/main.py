@@ -99,7 +99,6 @@ def main(rf,pf,level, rd_seed, mean_error, inpdm, fnm, limit_time, limit_n, num,
     # A list to store the results we want to save, e.g. the repair time, the size of bound
     res = []
     res.append(fnm)
-    print limit_time
     max_ret = searchMaxErr(rf,pf,inpdm,fnm,limit_time,limit_n)
     num_line = 0
     staTime = time.time()
@@ -121,6 +120,22 @@ def main(rf,pf,level, rd_seed, mean_error, inpdm, fnm, limit_time, limit_n, num,
         # call the derivingApproximation to produce approximation and produce patch
         save_lines, num_line = derivingApproximation(th, bound_l, rf, fnm, filename, max_x)
         bf.save_line_list(line_filename + '/' + fnm + '.txt', save_lines)
+        combCovertToC(bound_l, fnm, len(bound_l), filename)
+        temp_t = time.time() - staTime
+        res.append(temp_t)
+        patch_generate(ori_bound, fnm, filename)
+        total_time = time.time() - staTime
+        res.append(total_time)
+        res.append(rd_seed)
+        print "Repair time: " + str(total_time)
+        print "patch is generate, the name is " + 'patch_of_' + fnm + ".c"
+        size_file = 0.0
+        if os.path.exists(filename + '/patch_of_' + fnm + ".c"):
+            size_file = os.path.getsize(filename + '/patch_of_' + fnm + ".c")
+        res.append(size_file)
+        res.append(num_line)
+        bf.glob_point_l = []
+        return res
     except TimeoutError:
         print 'timeout'
         res.append(0.0)
@@ -129,20 +144,6 @@ def main(rf,pf,level, rd_seed, mean_error, inpdm, fnm, limit_time, limit_n, num,
         res.append(0)
         res.append(0.0)
         res.append(0.0)
-    combCovertToC(bound_l, fnm, len(bound_l), filename)
-    temp_t = time.time() - staTime
-    res.append(temp_t)
-    patch_generate(ori_bound, fnm, filename)
-    total_time = time.time() - staTime
-    res.append(total_time)
-    res.append(rd_seed)
-    print "Repair time: " + str(total_time)
-    print "patch is generate, the name is " + 'patch_of_' + fnm + ".c"
-    size_file = 0.0
-    if os.path.exists(filename + '/patch_of_' + fnm + ".c"):
-        size_file = os.path.getsize(filename + '/patch_of_' + fnm + ".c")
-    res.append(size_file)
-    res.append(num_line)
-    bf.glob_point_l = []
-    return res
+        return res
+
 

@@ -20,12 +20,9 @@ AutoRNP is licensed under GPLv3. If that doesn't work for your use case, let us 
 * python 2.7.14. You can install it by following commonds (on ubuntu):
     
     
-        $ sudo add-apt-repository ppa:jonathonf/python-2.7
-        
-        $ sudo apt-get update
-        
+        $ sudo add-apt-repository ppa:jonathonf/python-2.7        
+        $ sudo apt-get update        
         $ sudo apt-get install python2.7
-    
         $ python --version
 
 * gsl-2.1 
@@ -34,8 +31,14 @@ AutoRNP is licensed under GPLv3. If that doesn't work for your use case, let us 
 
 
         http://mirrors.ustc.edu.cn/gnu/gsl/
-
         $ ./configure | make | make install
+
+* mpfr 3.1.2-1
+
+    Install:
+    
+        sudo apt-get install libmpfr-dev
+    
 
 * pygsl-2.3.0 (Install it later, see Installation Instructions). 
 
@@ -43,10 +46,6 @@ AutoRNP is licensed under GPLv3. If that doesn't work for your use case, let us 
 
 
         https://sourceforge.net/projects/pygsl/files/pygsl/
-
-
-
-
 
 ### Installation Instructions
 The project was developed on a 64-bit linux platform (ubuntu 16.04 LTS). 
@@ -58,10 +57,11 @@ install the required python package (details in file "requirements.txt") and con
 * Install pygsl-2.3.0 (on ubuntu), before installing pygsl, gsl must be installed first:
 
 
+        $ python setup.py config
         $ python setup.py build
-        
-        $ python setup.py install
+        $ sudo python setup.py install
  
+
 
 
 

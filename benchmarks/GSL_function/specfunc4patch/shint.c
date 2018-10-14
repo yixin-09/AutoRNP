@@ -23,6 +23,7 @@
 #include <gsl/gsl_math.h>
 #include <gsl/gsl_errno.h>
 #include <gsl/gsl_sf_expint.h>
+#include "patch_of_gsl_sf_Chi.c"
 
 #include "error.h"
 
@@ -99,6 +100,11 @@ int gsl_sf_Shi_e(const double x, gsl_sf_result * result)
 
 int gsl_sf_Chi_e(const double x, gsl_sf_result * result)
 {
+ if((x<=0.5362388350563275)&&(x>=0.5122635570530595)){
+  result->val = accuracy_improve_patch_of_gsl_sf_Chi(x);
+  result->err = GSL_DBL_EPSILON * fabs(result->val);
+  return GSL_SUCCESS;
+ }
   gsl_sf_result result_Ei;
   gsl_sf_result result_E1;
   int status_Ei = gsl_sf_expint_Ei_e(x, &result_Ei);

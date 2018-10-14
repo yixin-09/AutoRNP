@@ -345,6 +345,7 @@ def test_pf(pf,inp):
 
 def just_run_pf(pf,bound,rd_seed):
     np.random.seed(rd_seed)
+    limit_n = 10000000
     limit_n = 1000
     pf_array = np.frompyfunc(lambda x: test_pf(pf,x), 1, 1)
     dis_num = getFPNum(bound[0],bound[1])

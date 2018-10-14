@@ -45,7 +45,7 @@ def testBasedThreshold(num,fun_id,repair_enable,level,limit_time,rd_seed):
     filename = "experiment_results/table_results/"
     if not os.path.exists(filename):
         os.makedirs(filename)
-    print rd_seed
+    print "Random seed is :"+ str(rd_seed)
     i = fun_id*3
     #change it to youself password
     password = "hello"
@@ -55,6 +55,7 @@ def testBasedThreshold(num,fun_id,repair_enable,level,limit_time,rd_seed):
     mean_error = mean_error_l[fun_id]
     inpdm = input_domain[fun_id][0]
     fnm = ngfl_fname[fun_id]
+    limit_n = 100
     limit_n = 1
     res = main(rf, pf, level, rd_seed, mean_error, inpdm, fnm, limit_time, limit_n, num, password)
     ln = [0, 3, 2, 1]
@@ -87,19 +88,19 @@ def testBasedThreshold(num,fun_id,repair_enable,level,limit_time,rd_seed):
     else:
         print "Patch is generated"
 
-
+st_time = time.time()
 rd_seed = np.random.randint(0, 1e8, 1)[0]
 np.random.seed(rd_seed)
 repair_enable = 1
-num = 1
-for i in range(11,12):
+num = 2
+for i in range(0,20):
     limit_time = 3600 * 3
     if i == 14 :
         # if you want to repair the gsl_sf_psi_1 function, change the time to more than 8 hours
-        limit_time = 30
+        limit_time = 100
     testBasedThreshold(num,i,repair_enable,0.1,limit_time,rd_seed)
     testBasedThreshold(num,i,repair_enable,0.2,limit_time,rd_seed)
     testBasedThreshold(num,i,repair_enable,0.3,limit_time,rd_seed)
-
+print "Total time is :" + repr(time.time()-st_time)
 
 

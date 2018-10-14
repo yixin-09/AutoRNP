@@ -2,43 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2bdf785-1195-4317-95af-aa597b5b897a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/autofig.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/run4GSL.sh" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/README_aec" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/plot_res.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/AutoRNP/DEMC.py" afterPath="$PROJECT_DIR$/AutoRNP/DEMC.py" />
-      <change beforePath="$PROJECT_DIR$/AutoRNP/GenPatch.py" afterPath="$PROJECT_DIR$/AutoRNP/GenPatch.py" />
-      <change beforePath="$PROJECT_DIR$/AutoRNP/PTB.py" afterPath="$PROJECT_DIR$/AutoRNP/PTB.py" />
       <change beforePath="$PROJECT_DIR$/AutoRNP/basic_function.py" afterPath="$PROJECT_DIR$/AutoRNP/basic_function.py" />
-      <change beforePath="$PROJECT_DIR$/AutoRNP/extractor.py" afterPath="$PROJECT_DIR$/AutoRNP/extractor.py" />
       <change beforePath="$PROJECT_DIR$/AutoRNP/main.py" afterPath="$PROJECT_DIR$/AutoRNP/main.py" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_Chi_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_Ci_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_airy_Ai_deriv_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_airy_Ai_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_airy_Bi_deriv_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_airy_Bi_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_bessel_J0_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_bessel_J1_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_bessel_Y0_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_bessel_Y1_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_clausen_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_eta_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_expint_Ei_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_legendre_P2_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_legendre_P3_patch.txt" afterPath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_legendre_P3_patch.txt" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_legendre_Q1_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_lnsinh_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_psi_patch.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_zeta_patch.txt" afterPath="" />
       <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/specfunc4patch/legendre_poly.c" afterPath="$PROJECT_DIR$/benchmarks/GSL_function/specfunc4patch/legendre_poly.c" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/specfunc4patch/zeta.c" afterPath="$PROJECT_DIR$/benchmarks/GSL_function/specfunc4patch/zeta.c" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/gsl_src/autoconf.sh" afterPath="$PROJECT_DIR$/benchmarks/gsl_src/autoconf.sh" />
-      <change beforePath="$PROJECT_DIR$/experiments/Onevbench.py" afterPath="$PROJECT_DIR$/experiments/Onevbench.py" />
-      <change beforePath="$PROJECT_DIR$/experiments/apply_patch.py" afterPath="$PROJECT_DIR$/experiments/apply_patch.py" />
+      <change beforePath="$PROJECT_DIR$/benchmarks/GSL_function/specfunc4patch/shint.c" afterPath="$PROJECT_DIR$/benchmarks/GSL_function/specfunc4patch/shint.c" />
       <change beforePath="$PROJECT_DIR$/experiments/repairGSL.py" afterPath="$PROJECT_DIR$/experiments/repairGSL.py" />
-      <change beforePath="$PROJECT_DIR$/experiments/run_patch.py" afterPath="$PROJECT_DIR$/experiments/run_patch.py" />
-      <change beforePath="$PROJECT_DIR$/experiments/temp.py" afterPath="$PROJECT_DIR$/experiments/temp.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,8 +24,8 @@
       <file leaf-file-name="repairGSL.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/experiments/repairGSL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="84" column="57" lean-forward="false" selection-start-line="84" selection-start-column="57" selection-end-line="84" selection-end-column="57" />
+            <state relative-caret-position="257">
+              <caret line="59" column="13" lean-forward="false" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -61,21 +33,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="autoconf.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/benchmarks/gsl_src/autoconf.sh">
+      <file leaf-file-name="plot_res.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plot_res.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+            <state relative-caret-position="-148">
+              <caret line="751" column="29" lean-forward="false" selection-start-line="751" selection-start-column="29" selection-end-line="751" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README_aec" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README_aec">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <file leaf-file-name="Onevbench.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/experiments/Onevbench.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+            <state relative-caret-position="434">
+              <caret line="116" column="371" lean-forward="false" selection-start-line="116" selection-start-column="371" selection-end-line="116" selection-end-column="390" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apply_patch.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/experiments/apply_patch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -84,8 +78,8 @@
       <file leaf-file-name="basic_function.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AutoRNP/basic_function.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="347" column="18" lean-forward="false" selection-start-line="347" selection-start-column="18" selection-end-line="347" selection-end-column="18" />
+            <state relative-caret-position="-355">
+              <caret line="317" column="14" lean-forward="false" selection-start-line="317" selection-start-column="14" selection-end-line="317" selection-end-column="14" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -96,8 +90,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AutoRNP/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-778">
-              <caret line="74" column="4" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+            <state relative-caret-position="-743">
+              <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -105,54 +99,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="495">
-                <caret line="72" column="7" lean-forward="false" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="7" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="run4GSL.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run4GSL.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="autofig.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autofig.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="detector.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AutoRNP/detector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state relative-caret-position="238">
+              <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DEMC.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AutoRNP/DEMC.py">
+      <file leaf-file-name="PTB.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AutoRNP/PTB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-300">
-              <caret line="57" column="73" lean-forward="false" selection-start-line="57" selection-start-column="73" selection-end-line="57" selection-end-column="73" />
+            <state relative-caret-position="-310">
+              <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -175,11 +136,13 @@
       <find>i + j + k</find>
       <find>ret[j]</find>
       <find>ln</find>
+      <find>&quot;experiment_results/table_results/experiment_results_total630.xls&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>i*3+k</replace>
       <replace>i + k</replace>
       <replace>res</replace>
+      <replace>file_name</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -215,20 +178,25 @@
         <option value="$PROJECT_DIR$/experiments/Onevbench.py" />
         <option value="$PROJECT_DIR$/AutoRNP/detector.py" />
         <option value="$PROJECT_DIR$/experiments/apply_patch.py" />
-        <option value="$PROJECT_DIR$/AutoRNP/basic_function.py" />
-        <option value="$PROJECT_DIR$/AutoRNP/main.py" />
         <option value="$PROJECT_DIR$/AutoRNP/DEMC.py" />
         <option value="$PROJECT_DIR$/autofig.sh" />
         <option value="$PROJECT_DIR$/run4GSL.sh" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/benchmarks/gsl_src/autoconf.sh" />
-        <option value="$PROJECT_DIR$/experiments/repairGSL.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/AutoRNP/main.py" />
+        <option value="$PROJECT_DIR$/plot_arrow.py" />
+        <option value="$PROJECT_DIR$/AutoRNP/basic_function.py" />
+        <option value="$PROJECT_DIR$/experiments/repairGSL.py" />
+        <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/README_aec.md" />
+        <option value="$PROJECT_DIR$/plot_res.py" />
+        <option value="$PROJECT_DIR$/README_aec" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
+    <option name="x" value="1985" />
     <option name="y" value="-4" />
     <option name="width" value="1855" />
     <option name="height" value="1084" />
@@ -251,6 +219,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,13 +231,12 @@
             <path>
               <item name="AutoRNP" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoRNP" type="462c0819:PsiDirectoryNode" />
-              <item name="benchmarks" type="462c0819:PsiDirectoryNode" />
+              <item name="AutoRNP" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutoRNP" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoRNP" type="462c0819:PsiDirectoryNode" />
               <item name="benchmarks" type="462c0819:PsiDirectoryNode" />
-              <item name="GSL_function" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutoRNP" type="b2602c69:ProjectViewProjectNode" />
@@ -284,24 +253,22 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/experiments/Extractor" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/experiments" />
       <recent name="$PROJECT_DIR$/AutoRNP" />
       <recent name="$PROJECT_DIR$/experiments/Extractor" />
       <recent name="$PROJECT_DIR$/experiments/Detector" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/experiments/Extractor" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -441,18 +408,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24517906" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3140496" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961783" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11863057" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942432" sideWeight="0.35592288" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3859275" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3859275" sideWeight="0.5063361" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3859275" sideWeight="0.4936639" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33995584" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32747602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2490358" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942432" sideWeight="0.6440771" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272921" sideWeight="0.4980716" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4936034" sideWeight="0.6347107" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978677" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -490,36 +457,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/experiments/apply_patch.py</url>
-          <line>5</line>
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/experiments/Detector/bench4GSL49.py" />
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/scipy/optimize/_basinhopping.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="311" column="17" lean-forward="false" selection-start-line="311" selection-start-column="17" selection-end-line="311" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/Detector/basic_function.py" />
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/scipy/optimize/linesearch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="515" column="0" lean-forward="false" selection-start-line="515" selection-start-column="0" selection-end-line="515" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/Detector/detecting_results/log1e10" />
-    <entry file="file://$PROJECT_DIR$/experiments/Detector/detecting_results/log1e5" />
-    <entry file="file://$PROJECT_DIR$/AutoRNP/genPatch.py" />
     <entry file="file://$PROJECT_DIR$/experiments/Extractor/experiment4GSL.py" />
     <entry file="file://$PROJECT_DIR$/experiments/Detector/DEMC.py" />
     <entry file="file://$PROJECT_DIR$/experiments/Detector/detecting.py" />
@@ -547,13 +489,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_airy_Ai_patch.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_airy_Ai_patch.txt" />
     <entry file="file://$PROJECT_DIR$/experiments/experiment_results/repair_results1/test3/patch_of_gsl_sf_zeta.c" />
     <entry file="file://$PROJECT_DIR$/AutoRNP/run_experiment.sh" />
     <entry file="file://$PROJECT_DIR$/AutoRNP/__init__.py">
@@ -568,7 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="37" lean-forward="false" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -576,7 +511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -600,9 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="71" column="14" lean-forward="false" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#35#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -610,7 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -642,24 +572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AutoRNP/PTB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="64" column="22" lean-forward="false" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/Onevbench.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="116" column="371" lean-forward="false" selection-start-line="116" selection-start-column="371" selection-end-line="116" selection-end-column="390" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/experiments/run_patch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -670,48 +582,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/apply_patch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AutoRNP/DEMC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
+        <state relative-caret-position="850">
           <caret line="57" column="73" lean-forward="false" selection-start-line="57" selection-start-column="73" selection-end-line="57" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AutoRNP/detector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_psi_1_patch.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/benchmarks/GSL_function/gsl_sf_psi_1_patch.txt" />
     <entry file="file://$PROJECT_DIR$/autofig.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -720,20 +599,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AutoRNP/basic_function.py">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="347" column="18" lean-forward="false" selection-start-line="347" selection-start-column="18" selection-end-line="347" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run4GSL.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        <state relative-caret-position="136">
+          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -746,31 +615,148 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/repairGSL.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="272">
+            <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run4GSL.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="84" column="57" lean-forward="false" selection-start-line="84" selection-start-column="57" selection-end-line="84" selection-end-column="57" />
+        <state relative-caret-position="34">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutoRNP/detector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutoRNP/PTB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-310">
+          <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/experiment_results/repair_results1/test1/patch_of_gsl_sf_psi_1.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/experiment_results/repair_results1/test1/patch/tmp_log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/experiment_results/repair_results1/test1/patch_of_gsl_sf_Chi.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="34354" column="0" lean-forward="false" selection-start-line="34354" selection-start-column="0" selection-end-line="34354" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/experiment_results/repair_results2/test1/patch_of_gsl_sf_Chi.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutoRNP/basic_function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-355">
+          <caret line="317" column="14" lean-forward="false" selection-start-line="317" selection-start-column="14" selection-end-line="317" selection-end-column="14" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AutoRNP/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-778">
-          <caret line="74" column="4" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+        <state relative-caret-position="-743">
+          <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+    <entry file="file://$PROJECT_DIR$/experiments/Onevbench.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="116" column="371" lean-forward="false" selection-start-line="116" selection-start-column="371" selection-end-line="116" selection-end-column="390" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/experiment_results/repair_results1/test1/patch_of_gsl_sf_legendre_P2.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="626" column="41" lean-forward="false" selection-start-line="626" selection-start-column="14" selection-end-line="626" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/repairGSL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="59" column="13" lean-forward="false" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/apply_patch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot_res.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-148">
+          <caret line="751" column="29" lean-forward="false" selection-start-line="751" selection-start-column="29" selection-end-line="751" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README_aec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="495">
-            <caret line="72" column="7" lean-forward="false" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="7" />
+          <first_editor relative-caret-position="493">
+            <caret line="97" column="20" lean-forward="false" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
             <folding />
           </first_editor>
           <second_editor />

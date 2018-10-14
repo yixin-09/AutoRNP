@@ -1,0 +1,140 @@
+The following are the instructions and explanations for the artifact
+related to the POPL 2019 submitted paper number 212:
+
+    Efficient Automated Repair of High Floating-Point Errors in
+    Numerical Libraries
+
+In Section 5 of the submitted paper, we propose an experimental evaluation
+of our approach implemented by the new tool AutoRNP: the main goal of this artifact is to repeat
+this experimental evaluation.
+(Note our tool AutoRNP is available on the Github :
+https://github.com/yixin-09/AutoRNP)
+
+
+The `AutoRNP' folder on the desktop of the VM contains the files of the artifact.
+
+
+This file is organized in the following sections:
+
+0. DETAILS ON THE GUEST AND HOST MACHINES USED
+1. STRUCTURE OF THE DIRECTORY CONTAINING THE ARTIFACT
+2. RUNNING THE EXPERIMENTS ON 20 FUNCTIONS OF GSL
+    2.1 RUN AutoRNP ON THE 20 FUNCTIONS
+    2.2 RUN HBG ON THE 20 FUNCTIONS
+
+
+
+--------------------------------------------------------------------------
+
+0. DETAILS ON THE GUEST AND HOST MACHINE USED
+
+The (guest) VM is equipped with 64-bit Ubuntu 16.04 LTS
+and it is configured to use a 2 CPU and 4GB of RAM,
+it uses a VDI virtual disk of
+size 10GB.
+
+The username for the guest VM is "autornp"; the password is "hello".
+
+The host computer used to produce the VM (and running it)
+is a computer with an 3.5GHz(8C) Intel Core i7-3770K CPU and 16 GB RAM,
+running 64-bit Ubuntu 16.04 LTS.
+The host is running Oracle VirtualBox 5.2.4.
+The OVA VM appliance has been obtained by using the
+Open Virtualization Format version 1.0.
+
+--------------------------------------------------------------------------
+
+1. STRUCTURE OF THE DIRECTORY CONTAINING THE ARTIFACT
+
+Two directories in "AutoRNP_aec" are "AutoRNP" and "HBG"
+
+The main structure of "AutoRNP" directory is as follows:
+  * AutoRNP          --> source code of the tool
+  * benchmarks       --> source code of GSL and 20 functions in GSL
+  * experiments      --> scripts for repeat our experiments
+  * original_data    --> original results of experiments on AutoRNP in our paper
+
+The main structure of "HBG" directory is as follows:
+  * driver_functions --> executable programs of 20 functions and inputs for Herbgrind to test
+  * Herbgrind        --> source code of the Herbgrind (clone from https://github.com/uwplse/herbgrind)
+  * Herbie           --> source code of the Herbie (clone from https://github.com/uwplse/herbie)
+  * resultsOfHBG     --> original results of experiments on HBG in our paper
+
+--------------------------------------------------------------------------
+
+
+2. RUNNING THE EXPERIMENTS ON 20 FUNCTIONS OF GSL
+--------------------------------------------------------------------------
+2.1 RUN AutoRNP ON THE 20 FUNCTIONS
+
+Into the directory "AutoRNP_aec/AutoRNP", run the shell script:
+
+$ ./run4GSL.sh
+
+After few hours (more than 3 hours), experimental results are produced
+under the directory "AutoRNP_aec/AutoRNP/experiments".
+
+Note: we limit the repeat times of detecting algorithm (DEMC) and the
+sampling number of testing for you can complete the experiments in a
+shorter time, you can delete the line 318 and line 349 in file
+"AutoRNP_aec/AutoRNP/basic_function.py" and the line 59 in file
+"AutoRNP_aec/experiments/repair4GSL" to cancel the limitation.
+(More than 24 hours will be needed to complete the experiments after cancelling the limitation)
+
+*Structure of results:*
+The results are generate under the directory "AutoRNP_aec/AutoRNP/experiments",
+main structure of results is as follows:
+  * experiments/detecting_results
+    - DEMC             --> the detectiong results by our DEMC algorithm
+  * experiments/experiment_results
+    - repair_results+Y  --> includes the approximations of original mathematical functions and patches
+        - line+X        --> includes the approximations of original mathematical functions
+        - test+X        --> includes the patches
+    - table_results*    --> includes the excel table store almost all experimental data (e.g. repair time, size of patches)
+    (Note: X is in {1,2,3} which corresponding to {high, middle, low} three repair threshold in paper,
+           Y is the num to label the experiments, defaults 1 in this test, you can change Y in line 94 of
+           file "AutoRNP_aec/AutoRNP/experiments/repair4GSL.py")
+
+*Analyzing results:*
+
+Give the excel table name to the python script "plot_res.py",
+most of similar tables and figures in our paper are produced in the same directory of "plot_res.py", for example:
+
+$ python plot_res.py -f "experiments/experiment_results/table_results/experiment_results_total1.xls"
+
+*Analyzing results in "original_data":*
+
+Original results of experiments on AutoRNP in our paper are mainly store in the excel table
+"original_data/experiment_results/table_results/experiment_results_total630.xls",
+so run the command below, you can get the most of same tables and figures in our paper
+
+$ python plot_res.py -f "original_data/experiment_results/table_results/experiment_results_total630.xls"
+
+--------------------------------------------------------------------------
+2.2 RUN HBG ON THE 20 FUNCTIONS
+
+We have already collect the floating-point expressions
+that output by Herbgrind runs on the 20 function.
+Files store those expressions are named "High_level.fpcore", "Middle_level.fpcore" and "Low_level.fpcore".
+We put those files in the root of directory "HBG".
+
+You can run the following commend to using Herbie to improving those floating-point expressions:
+
+$ ./HBG_herbie_test.sh
+
+After few hours (more than 10 hours), results for each file are stored in three directories:
+"graphsHigh", "graphsMiddle", "graphsLow", and you can open the file "report.html"
+in each directory to view the results reported by Herbie.
+
+Experimental results in our host machine are store in directory "resultsOfHBG".
+
+Note: Due to the different random seed and the changes in newest Herbie,
+the outputs of Herbie are not the same as we show in our paper,
+while the slightly differece will not influence the conclusion in our paper.
+
+
+
+
+
+
+

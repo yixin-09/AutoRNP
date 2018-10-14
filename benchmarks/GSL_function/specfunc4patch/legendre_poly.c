@@ -23,7 +23,6 @@
 #include <gsl/gsl_math.h>
 #include <gsl/gsl_errno.h>
 #include <gsl/gsl_sf_bessel.h>
-#include "patch_of_gsl_sf_legendre_P3.c"
 #include <gsl/gsl_sf_exp.h>
 #include <gsl/gsl_sf_gamma.h>
 #include <gsl/gsl_sf_log.h>
@@ -90,11 +89,6 @@ gsl_sf_legendre_P2_e(double x, gsl_sf_result * result)
 int
 gsl_sf_legendre_P3_e(double x, gsl_sf_result * result)
 {
- if((x<=0.7745973050235724)&&(x>=0.7745960334578249)){
-  result->val = accuracy_improve_patch_of_gsl_sf_legendre_P3(x);
-  result->err = GSL_DBL_EPSILON * fabs(result->val);
-  return GSL_SUCCESS;
- }
   /* CHECK_POINTER(result) */
 
   {
