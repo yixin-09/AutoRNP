@@ -1,0 +1,6 @@
+#include "patch_of_gsl_sf_Chi.c"
+if((x<=0.5238295805198081)&&(x>=0.5238155623301031)){
+ result->val = accuracy_improve_patch_of_gsl_sf_Chi(x);
+ result->err = GSL_DBL_EPSILON * fabs(result->val);
+ return GSL_SUCCESS;
+}

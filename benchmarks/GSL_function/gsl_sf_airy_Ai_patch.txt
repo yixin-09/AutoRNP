@@ -1,0 +1,6 @@
+#include "patch_of_gsl_sf_airy_Ai.c"
+if((x<=-434.01660971088944)&&(x>=-434.0166098950911)){
+ result->val = accuracy_improve_patch_of_gsl_sf_airy_Ai(x);
+ result->err = GSL_DBL_EPSILON * fabs(result->val);
+ return GSL_SUCCESS;
+}

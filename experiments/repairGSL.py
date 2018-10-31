@@ -4,6 +4,7 @@ import numpy as np
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from AutoRNP.main import main
+import AutoRNP.basic_function as bf
 from Onevbench import *
 from xlutils.copy import copy
 import xlrd
@@ -57,7 +58,11 @@ def testBasedThreshold(num,fun_id,repair_enable,level,limit_time,rd_seed):
     fnm = ngfl_fname[fun_id]
     limit_n = 100
     limit_n = 1
-    res = main(rf, pf, level, rd_seed, mean_error, inpdm, fnm, limit_time, limit_n, num, password)
+    # generate the inputs and max error in our paper
+    inp = test_inp[fun_id]
+    max_err= bf.getFPNum(rf(inp),pf(inp))
+    max_ret=[max_err,inp]
+    res = main(rf, pf, level, rd_seed, mean_error, inpdm, fnm, limit_time, limit_n, num, password,max_ret)
     ln = [0, 3, 2, 1]
     k = ln[int(level*10)]
     table_name = "experiment_results/table_results/experiment_results_total" + str(num) + ".xls"
@@ -92,12 +97,13 @@ st_time = time.time()
 rd_seed = np.random.randint(0, 1e8, 1)[0]
 np.random.seed(rd_seed)
 repair_enable = 1
-num = 2
+num = 1
 for i in range(0,20):
     limit_time = 3600 * 3
     if i == 14 :
         # if you want to repair the gsl_sf_psi_1 function, change the time to more than 8 hours
         limit_time = 100
+    print "*****************************************************"
     testBasedThreshold(num,i,repair_enable,0.1,limit_time,rd_seed)
     testBasedThreshold(num,i,repair_enable,0.2,limit_time,rd_seed)
     testBasedThreshold(num,i,repair_enable,0.3,limit_time,rd_seed)

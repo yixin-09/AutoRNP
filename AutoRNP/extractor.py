@@ -13,8 +13,14 @@ from scipy.optimize import minimize
 def covetBoundTline(rf, bound, disbd):
     x0 = bound[0]
     x1 = bound[1]
-    y0 = rf(bound[0])
-    y1 = rf(bound[1])
+    try:
+        y0 = rf(bound[0])
+    except (ValueError, ZeroDivisionError, OverflowError, Warning, TypeError):
+        y0 = rf(bound[0]+bf.getulp(bound[0]))
+    try:
+        y1 = rf(bound[1])
+    except (ValueError, ZeroDivisionError, OverflowError, Warning, TypeError):
+        y1 = rf(bound[1]-bf.getulp(bound[1]))
     ulp_x0 = bf.getulp(x0)
     y1 = float(y1)
     y0 = float(y0)

@@ -24,6 +24,7 @@ def derivingApproximation(th,bound_l,rf,name,filename,inp):
     bound_idx = 0
     num_line = 0
     save_line = []
+    exr.glob_point_l = []
     for bound in bound_l:
         temp_ploy_fit = ''
         n = int(bf.getFPNum(bound[0], bound[1]))
@@ -63,7 +64,6 @@ def derivingApproximation(th,bound_l,rf,name,filename,inp):
         if len(exr.glob_point_l) >= 30:
             temp_ploy_fit = generate_fitting(exr.glob_point_l)
         covertToC(exr.glob_point_l, n, name, bound_idx, filename,ori_bound,temp_ploy_fit)
-        # bf.pure_plot_error_inbound(bound, rf,name,bf.glob_point_l)
         save_line=save_line+exr.glob_point_l
         num_line = num_line+len(exr.glob_point_l)
         bound_idx = bound_idx + 1
@@ -72,7 +72,7 @@ def derivingApproximation(th,bound_l,rf,name,filename,inp):
 
 
 
-def main(rf,pf,level, rd_seed, mean_error, inpdm, fnm, limit_time, limit_n, num, password):
+def main(rf,pf,level, rd_seed, mean_error, inpdm, fnm, limit_time, limit_n, num, password,max_ret):
     print "Begin repair the function "+fnm
     # generate file to store patch files
     filename = "../experiments/experiment_results/repair_results" + str(num) + "/test" + repr(int(level * 10))
@@ -99,16 +99,18 @@ def main(rf,pf,level, rd_seed, mean_error, inpdm, fnm, limit_time, limit_n, num,
     # A list to store the results we want to save, e.g. the repair time, the size of bound
     res = []
     res.append(fnm)
-    max_ret = searchMaxErr(rf,pf,inpdm,fnm,limit_time,limit_n)
+    if max_ret == []:
+        max_ret = searchMaxErr(rf,pf,inpdm,fnm,limit_time,limit_n)
+    else:
+	searchMaxErr(rf,pf,inpdm,fnm,limit_time,limit_n)
     num_line = 0
     staTime = time.time()
     try:
         signal.alarm(limit_time)
         # call the detector to find I_err
+	print "Executing the PTB algorithm"
         max_x, bound, bound_l, th = detectHighErrs(max_ret, level, mean_error, rf, pf)
         t1 = time.time() - staTime
-        print "PTB Time"
-        print t1
         res.append(th)
         res.append(t1)
         res.append(bound)

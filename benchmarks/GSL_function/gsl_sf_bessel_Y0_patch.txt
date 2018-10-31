@@ -1,0 +1,6 @@
+#include "patch_of_gsl_sf_bessel_Y0.c"
+if((x<=3.9576831575697224)&&(x>=3.957673681065668)){
+ result->val = accuracy_improve_patch_of_gsl_sf_bessel_Y0(x);
+ result->err = GSL_DBL_EPSILON * fabs(result->val);
+ return GSL_SUCCESS;
+}

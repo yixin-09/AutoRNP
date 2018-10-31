@@ -28,7 +28,6 @@ def pointToBound(th,rf,pf,point):
     # right ward iteration
     step = 4e2
     print "Right forward to find the up bound"
-    print th
     ulp_p = bf.getulp(point)
     p0_err = bf.getUlpError(rf(point), pf(point))
     temp_b1 = point

@@ -1,0 +1,6 @@
+#include "patch_of_gsl_sf_psi.c"
+if((x<=-1829.8739162313734)&&(x>=-1829.8739235957096)){
+ result->val = accuracy_improve_patch_of_gsl_sf_psi(x);
+ result->err = GSL_DBL_EPSILON * fabs(result->val);
+ return GSL_SUCCESS;
+}

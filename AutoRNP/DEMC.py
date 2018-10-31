@@ -42,8 +42,7 @@ def DEMC(rf,pf,inpdm,fnm,limit_n,limit_time):
     glob_fitness_con = np.frompyfunc(lambda x: bf.fitness_fun1(rf, pf, x), 1, 1)
     glob_fitness_real = np.frompyfunc(lambda x: bf.fitness_fun(rf, pf, x), 1, 1)
     try:
-        print "demc"
-        print limit_time
+        print "Detecting possible maximum error by DEMC algorithm"
         signal.alarm(limit_time)
         while(count<limit_n):
             temp_st=time.time()
@@ -105,10 +104,6 @@ def DEMC(rf,pf,inpdm,fnm,limit_n,limit_time):
                 final_bound = bound
         final_time = time.time()-st
         bf.output_err(record_res_l, file_name, fnm)
-        print "The detected max error and input are"
-        print "max_err:"+repr(final_max)
-        print "input:"+repr(final_x)
-        print "The time is "+repr(final_time)
         return [final_max, final_x, final_bound, final_time,count,final_count1,final_count2]
     except TimeoutError:
         final_time = time.time() - st
