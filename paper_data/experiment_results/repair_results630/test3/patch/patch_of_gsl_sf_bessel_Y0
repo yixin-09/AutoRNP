@@ -1,0 +1,22 @@
+--- ../benchmarks/GSL_function/specfunc4patch/bessel_Y0.c	2018-06-30 23:14:22.624052849 +0800
++++ experiment_results/repair_results630/test3/patch/gsl_sf_bessel_Y0_patch.c	2018-06-30 23:16:00.943644916 +0800
+@@ -23,6 +23,7 @@
+ #include <gsl/gsl_math.h>
+ #include <gsl/gsl_errno.h>
+ #include <gsl/gsl_sf_trig.h>
++#include "patch_of_gsl_sf_bessel_Y0.c"
+ #include <gsl/gsl_sf_bessel.h>
+ 
+ #include "error.h"
+@@ -71,6 +72,11 @@
+ 
+ int gsl_sf_bessel_Y0_e(const double x, gsl_sf_result * result)
+ {
++ if((x<=3.957683157569703)&&(x>=3.9576736810657076)){
++  result->val = accuracy_improve_patch_of_gsl_sf_bessel_Y0(x);
++  result->err = GSL_DBL_EPSILON * fabs(result->val);
++  return GSL_SUCCESS;
++ }
+   const double two_over_pi = 2.0/M_PI;
+   const double xmax        = 1.0/GSL_DBL_EPSILON;
+ 

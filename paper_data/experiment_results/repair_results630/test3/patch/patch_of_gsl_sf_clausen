@@ -1,0 +1,22 @@
+--- ../benchmarks/GSL_function/specfunc4patch/clausen.c	2018-06-30 23:14:22.624052849 +0800
++++ experiment_results/repair_results630/test3/patch/gsl_sf_clausen_patch.c	2018-06-30 23:18:07.495094532 +0800
+@@ -23,6 +23,7 @@
+ #include <gsl/gsl_math.h>
+ #include <gsl/gsl_errno.h>
+ #include <gsl/gsl_sf_trig.h>
++#include "patch_of_gsl_sf_clausen.c"
+ #include <gsl/gsl_sf_clausen.h>
+ 
+ #include "chebyshev.h"
+@@ -57,6 +58,11 @@
+ 
+ int gsl_sf_clausen_e(double x, gsl_sf_result *result)
+ {
++ if((x<=-78.53981358802316)&&(x>=-78.53981921798268)){
++  result->val = accuracy_improve_patch_of_gsl_sf_clausen(x);
++  result->err = GSL_DBL_EPSILON * fabs(result->val);
++  return GSL_SUCCESS;
++ }
+   const double x_cut = M_PI * GSL_SQRT_DBL_EPSILON;
+ 
+   double sgn = 1.0;

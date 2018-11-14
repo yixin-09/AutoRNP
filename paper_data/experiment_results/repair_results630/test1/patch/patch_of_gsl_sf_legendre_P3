@@ -1,0 +1,22 @@
+--- ../benchmarks/GSL_function/specfunc4patch/legendre_poly.c	2018-07-01 01:26:38.699619375 +0800
++++ experiment_results/repair_results630/test1/patch/gsl_sf_legendre_P3_patch.c	2018-07-01 01:27:41.983292388 +0800
+@@ -23,6 +23,7 @@
+ #include <gsl/gsl_math.h>
+ #include <gsl/gsl_errno.h>
+ #include <gsl/gsl_sf_bessel.h>
++#include "patch_of_gsl_sf_legendre_P3.c"
+ #include "patch_of_gsl_sf_legendre_P2.c"
+ #include <gsl/gsl_sf_exp.h>
+ #include <gsl/gsl_sf_gamma.h>
+@@ -95,6 +96,11 @@
+ int
+ gsl_sf_legendre_P3_e(double x, gsl_sf_result * result)
+ {
++ if((x<=0.7771878196879902)&&(x>=0.7719792508475998)){
++  result->val = accuracy_improve_patch_of_gsl_sf_legendre_P3(x);
++  result->err = GSL_DBL_EPSILON * fabs(result->val);
++  return GSL_SUCCESS;
++ }
+   /* CHECK_POINTER(result) */
+ 
+   {

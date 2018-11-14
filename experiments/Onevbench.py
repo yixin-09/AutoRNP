@@ -115,3 +115,6 @@ ngfl_fname = [u'gsl_sf_airy_Ai', u'gsl_sf_airy_Bi', u'gsl_sf_airy_Ai_deriv', u'g
 ngfl_fname_exe = [u'gsl_sf_airy_Ai_e', u'gsl_sf_airy_Bi_e', u'gsl_sf_airy_Ai_deriv_e', u'gsl_sf_airy_Bi_deriv_e', u'gsl_sf_bessel_J0_e', u'gsl_sf_bessel_J1_e', u'gsl_sf_bessel_Y0_e', u'gsl_sf_bessel_Y1_e', u'gsl_sf_clausen_e', u'gsl_sf_expint_Ei_e', u'gsl_sf_legendre_P2_e', u'gsl_sf_legendre_P3_e', u'gsl_sf_legendre_Q1_e', u'gsl_sf_psi_e', u'gsl_sf_psi_1_e', u'gsl_sf_Chi_e', u'gsl_sf_Ci_e', u'gsl_sf_lnsinh_e', u'gsl_sf_zeta_e', u'gsl_sf_eta_e']
 sngfl_fname = [u'airy_Ai', u'airy_Bi', u'airy_Ai_deriv', u'airy_Bi_deriv', u'bessel_J0', u'bessel_J1', u'bessel_Y0', u'bessel_Y1', u'clausen', u'xpint_Ei', u'legendre_P2', u'legendre_P3', u'legendre_Q1', u'psi', u'psi_1', u'Chi', u'Ci', u'lnsinh', u'zeta', u'ta']
 test_inp = [-434.01660980268616, -422.09671545328115, -324.4642927988943, -405.65023907608304, 200.2771557933324, 3.831705970207512, 3.957678419314858,30.618286491641115,-78.53981633974483, 0.3725074107813666, -0.5773502691896258, 0.7745966692414834, 0.8335565596009646, -1829.8739199136473, -7.999999999999999, 0.5238225713898643, 3.3841804225511862, 0.881373587019543, -3.9999999999999996, -1.9999999999999998]
+
+
+

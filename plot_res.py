@@ -7,6 +7,9 @@ import sys
 import os
 import time
 import getopt
+import matplotlib
+
+matplotlib.rcParams['text.usetex'] = True
 
 
 def arrowed_spines(ax=None, arrow_length=20, labels=('', ''), arrowprops=None):
@@ -253,7 +256,7 @@ def draw_arrow_error(be, ae, thl, name, name2):
     ax.set_xticks(x_l)
     plt.ylabel("Program ID")
     plt.tight_layout()
-    plt.savefig(name + ".eps", format="eps")
+    plt.savefig(name + ".pdf", format="pdf")
     plt.close()
     # plt.show()
 
@@ -550,8 +553,8 @@ def plot_th2Time2Boudn(bl, tl, ll):
     l5, = plt.plot(x, z2, 'k+-', label="repair time with " + r'$M_\varepsilon$')
     l6, = plt.plot(x, z3, 'k^-', label="repair time with " + r'$H_\varepsilon$')
     plt.xticks(x, id_l)
-    plt.ylabel("log2 value of Time(s) and Size of " + r'$I_{err}$', size=10)
-    plt.xlabel("Program ID")
+    plt.ylabel("log2 value of Time(s) and Size of " + r'$I_{err}$', size=12)
+    plt.xlabel("Program ID", size=12)
     i = 3
     for j, k in zip(bl, range(0, 60)):
         if k not in [42, 43, 44]:
@@ -561,7 +564,7 @@ def plot_th2Time2Boudn(bl, tl, ll):
                 ofst = 2
             plt.annotate(str(int(ll[k])),
                          xy=(i / 3, bl[k]), xycoords='data',
-                         xytext=(ofst - 5, 4), textcoords='offset points', fontsize=9)
+                         xytext=(ofst - 5, 4), textcoords='offset points', fontsize=10)
             i = i + 1
     # plt.legend(handles=[l1,l2,l3,l4,l5,l6], bbox_to_anchor=(0., 1.01, 0.7, .701), ncol=4, loc=3,
     #            mode="expand", borderaxespad=0.)
@@ -578,13 +581,13 @@ def plot_th2Time2Boudn(bl, tl, ll):
     )  # labels along the bottom edge are off
     # plt.legend(prop={'size': 6},handlelength= 7)
     # plt.legend(bbox_to_anchor=(1.04, 1), loc="upper left")handles=[l1,l2,l3],
-    l1 = plt.legend(handles=[l1, l2, l3], loc="upper left", prop={'size': 9})
-    l2 = plt.legend(handles=[l4, l5, l6], bbox_to_anchor=(1.0, 0.4), loc="center right", prop={'size': 9})
+    l1 = plt.legend(handles=[l1, l2, l3], loc="upper left", prop={'size': 10})
+    l2 = plt.legend(handles=[l4, l5, l6], bbox_to_anchor=(1.0, 0.4), loc="center right", prop={'size': 10})
     plt.gca().add_artist(l1)
     # plt.legend(bbox_to_anchor=(0, 1.02, 1, 0.2), loc="lower left",
     #            mode="expand", borderaxespad=0, ncol=1)
     plt.tight_layout()
-    plt.savefig("th2time2bound.eps", format="eps")
+    plt.savefig("th2time2bound.pdf", bbox_inches = 'tight',pad_inches = 0,format="pdf")
     plt.close()
 
 
@@ -665,7 +668,7 @@ def plot_cumulative_dis_time(b, a, name):
     plt.legend(loc=4)
     plt.grid(True)
     # plt.ylim([0,1.1])
-    plt.savefig(name + ".eps", format="eps")
+    plt.savefig(name + ".pdf", format="pdf")
     plt.close()
     # plt.show()
     # # plot the survival function
@@ -784,7 +787,6 @@ def main():
 
     # Output the table of storage overhead
     storage_overhead(file_name)
-    average_error_out(file_name, 1)
     out_programIDName(file_name)
 
 

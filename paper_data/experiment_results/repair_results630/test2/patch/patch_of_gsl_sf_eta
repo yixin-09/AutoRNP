@@ -1,0 +1,22 @@
+--- ../benchmarks/GSL_function/specfunc4patch/zeta.c	2018-06-30 23:28:00.564283223 +0800
++++ experiment_results/repair_results630/test2/patch/gsl_sf_eta_patch.c	2018-06-30 23:28:17.708198453 +0800
+@@ -23,6 +23,7 @@
+ #include <gsl/gsl_math.h>
+ #include <gsl/gsl_errno.h>
+ #include <gsl/gsl_sf_elementary.h>
++#include "patch_of_gsl_sf_eta.c"
+ #include "patch_of_gsl_sf_zeta.c"
+ #include <gsl/gsl_sf_exp.h>
+ #include <gsl/gsl_sf_gamma.h>
+@@ -985,6 +986,11 @@
+ 
+ int gsl_sf_eta_e(const double s, gsl_sf_result * result)
+ {
++ if((s<=-1.9999284107531812)&&(s>=-2.000071592196259)){
++  result->val = accuracy_improve_patch_of_gsl_sf_eta(s);
++  result->err = GSL_DBL_EPSILON * fabs(result->val);
++  return GSL_SUCCESS;
++ }
+   /* CHECK_POINTER(result) */
+ 
+   if(s > 100.0) {

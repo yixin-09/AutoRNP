@@ -1,0 +1,22 @@
+--- ../benchmarks/GSL_function/specfunc4patch/airy_der.c	2018-06-30 23:15:23.783801337 +0800
++++ experiment_results/repair_results630/test3/patch/gsl_sf_airy_Bi_deriv_patch.c	2018-06-30 23:15:45.511710188 +0800
+@@ -23,6 +23,7 @@
+ #include <gsl/gsl_math.h>
+ #include <gsl/gsl_errno.h>
+ #include <gsl/gsl_sf_exp.h>
++#include "patch_of_gsl_sf_airy_Bi_deriv.c"
+ #include "patch_of_gsl_sf_airy_Ai_deriv.c"
+ #include <gsl/gsl_sf_airy.h>
+ 
+@@ -820,6 +821,11 @@
+ int
+ gsl_sf_airy_Bi_deriv_e(const double x, gsl_mode_t mode, gsl_sf_result * result)
+ {
++ if((x<=-405.6502387971492)&&(x>=-405.65023937529224)){
++  result->val = accuracy_improve_patch_of_gsl_sf_airy_Bi_deriv(x);
++  result->err = GSL_DBL_EPSILON * fabs(result->val);
++  return GSL_SUCCESS;
++ }
+   /* CHECK_POINTER(result) */
+ 
+   if(x < -1.0) {
