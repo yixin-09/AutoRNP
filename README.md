@@ -1,6 +1,6 @@
 # AutoRNP -- Automated Repair of High Floating-Point Errors in Numerical Libraries
 
-AutoRNP is a dynamic analysis tool for automated detecting and repairing high floating-point errors in numerical programs.
+AutoRNP is a dynamic analysis tool for automatically detecting and repairing high floating-point errors in numerical programs.
 It includes following functions:
 
 * Detecting high floating-point errors in a numerical program
